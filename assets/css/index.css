@@ -8,6 +8,7 @@ body {
 
 input {
   text-transform: capitalize;
+  border: 2px solid #c5cfd7;
 }
 input:focus {
   outline: none;
@@ -28,7 +29,6 @@ main > section > #title {
   }
   input {
     width: 50%;
-    border: 1px solid #c5cfd7;
   }
   #header {
     height: 150px;
@@ -48,10 +48,5 @@ main > section > #title {
 
   #header {
     height: 200px;
-  }
-
-  input {
-    border: 2px solid #c5cfd7;
-    padding: 2px;
   }
 }
