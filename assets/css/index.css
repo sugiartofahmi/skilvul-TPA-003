@@ -1,0 +1,57 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+::placeholder {
+  color: #b7c2ca;
+  font-weight: 600;
+}
+
+input {
+  text-transform: capitalize;
+}
+input:focus {
+  outline: none;
+}
+
+main {
+  color: #293944;
+  gap: 20px;
+}
+
+main > section > #title {
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+  main > section > #title {
+    font-size: 30px;
+  }
+  input {
+    width: 50%;
+    border: 1px solid #c5cfd7;
+  }
+  #header {
+    height: 150px;
+  }
+  ::placeholder {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  main > section > #title {
+    font-size: 50px;
+  }
+  ::placeholder {
+    font-size: 18px;
+  }
+
+  #header {
+    height: 200px;
+  }
+
+  input {
+    border: 2px solid #c5cfd7;
+    padding: 2px;
+  }
+}
