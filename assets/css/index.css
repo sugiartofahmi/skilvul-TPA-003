@@ -8,7 +8,7 @@ body {
 
 input {
   text-transform: capitalize;
-  border: 2px solid #c5cfd7;
+  border-color: #c5cfd7;
 }
 input:focus {
   outline: none;
@@ -21,6 +21,14 @@ main {
 
 main > section > #title {
   font-weight: 900;
+}
+
+#grid_layout {
+  row-gap: 30px;
+  text-transform: capitalize;
+}
+#card_body {
+  height: 115px;
 }
 
 @media only screen and (max-width: 600px) {
