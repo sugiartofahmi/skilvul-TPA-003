@@ -42,7 +42,7 @@ const getMovie = async () => {
           src=${
             el.poster_path
               ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
-              : `https://codescandy.com/geeks-bootstrap-5/assets/images/placeholder/placeholder-4by3.svg`
+              : `https://t3.ftcdn.net/jpg/02/68/55/60/360_F_268556012_c1WBaKFN5rjRxR2eyV33znK4qnYeKZjm.jpg`
           }
           alt=""
           class=" "
