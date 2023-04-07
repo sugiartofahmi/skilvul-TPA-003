@@ -47,11 +47,10 @@ const getMovie = async () => {
         />
       </section>
       <section
-        id="card_body"
         class="card-body border border-2 d-flex flex-column justify-content-between"
       >
         <section class="d-flex justify-content-between ">
-          <p class="card-title w-75">${el.original_title}</p>
+          <p class="card-title w-75 ">${el.original_title}</p>
           <p class="card-title fw-bold">${el.vote_average}</p>
         </section>
         <p class="card-text">${`${dayjs(el.release_date).format(
