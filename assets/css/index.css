@@ -24,7 +24,8 @@ main > section > #title {
 }
 
 #grid_layout {
-  row-gap: 30px;
+  row-gap: 40px;
+
   text-transform: capitalize;
 }
 #card_body {
@@ -56,5 +57,11 @@ main > section > #title {
 
   #header {
     height: 200px;
+  }
+  #container_card {
+    width: 300px;
+  }
+  #grid_layout {
+    column-gap: 120px;
   }
 }
