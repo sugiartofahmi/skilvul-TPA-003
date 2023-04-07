@@ -1,4 +1,6 @@
 import { API_DATA } from "./constant.js";
+
+console.log(dayjs("2019-01-25").format("MMM DD, YYYY"));
 const params = {
   api_key: API_DATA.key,
   sort_by: API_DATA.sort,
@@ -28,7 +30,7 @@ const getMovie = async () => {
       );
     }
     data = await ress.json();
-    content.innerHTML = await data.results
+    result = await data.results
       .map(
         (
           el,
@@ -54,13 +56,16 @@ const getMovie = async () => {
           <p class="card-title w-75">${el.original_title}</p>
           <p class="card-title fw-bold">${el.vote_average}</p>
         </section>
-        <p class="card-text">${el.release_date}</p>
+        <p class="card-text">${`${dayjs(el.release_date).format(
+          "MMM DD| YYYY"
+        )}`}</p>
       </section>
     </section>
   </section>`
       )
       .join()
       .replace(/\,/gi, "");
+    content.innerHTML = result.replace(/\|/gi, ",");
   } catch (error) {
     console.log(error);
   }
