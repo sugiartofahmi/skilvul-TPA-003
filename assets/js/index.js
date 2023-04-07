@@ -1,6 +1,4 @@
 import { API_DATA } from "./constant.js";
-
-console.log(dayjs("2019-01-25").format("MMM DD, YYYY"));
 const params = {
   api_key: API_DATA.key,
   sort_by: API_DATA.sort,
