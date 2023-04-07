@@ -8,12 +8,11 @@ const search = document.getElementById("search");
 const content = document.getElementById("grid_layout");
 let ress, data, result;
 
-search,
-  addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      getMovie();
-    }
-  });
+search.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    getMovie();
+  }
+});
 
 const getMovie = async () => {
   try {
@@ -53,15 +52,16 @@ const getMovie = async () => {
           <p class="card-title w-75 ">${el.original_title}</p>
           <p class="card-title fw-bold">${el.vote_average}</p>
         </section>
-        <p class="card-text">${`${dayjs(el.release_date).format(
-          "MMM DD| YYYY"
-        )}`}</p>
+        <p class="card-text">${
+          el.release_date
+            ? `${dayjs(el.release_date).format("MMM DD| YYYY")}`
+            : "unknown"
+        }</p>
       </section>
     </section>
   </section>`
       )
-      .join()
-      .replace(/\,/gi, "");
+      .join("");
     content.innerHTML = result.replace(/\|/gi, ",");
   } catch (error) {
     console.log(error);
