@@ -30,9 +30,12 @@ const getMovie = async () => {
     data = await ress.json();
     content.innerHTML = await data.results
       .map(
-        (el, i) => `<section class="col-12 col-md-6 col-lg-4" key=${i}>
+        (
+          el,
+          i
+        ) => `<section class="col-12 col-md-6 col-lg-4" id="container_card" key=${i}>
     <section class="card  ">
-      <section class="ratio ratio-1x1 ">
+      <section class="ratio ratio-1x1 object-fit-scale ">
         <img
           src=${
             el.poster_path
@@ -40,7 +43,7 @@ const getMovie = async () => {
               : `https://codescandy.com/geeks-bootstrap-5/assets/images/placeholder/placeholder-4by3.svg`
           }
           alt=""
-          class="object-fit-cover"
+          class=" "
         />
       </section>
       <section
@@ -64,4 +67,3 @@ const getMovie = async () => {
 };
 
 getMovie();
-// "https://image.tmdb.org/t/p/w500${el.poster_path}"
