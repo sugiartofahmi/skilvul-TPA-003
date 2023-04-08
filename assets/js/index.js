@@ -27,12 +27,10 @@ const getMovie = async () => {
       );
     }
     data = await ress.json();
-    result = await data.results
-      .map(
-        (
-          el,
-          i
-        ) => `<section class="col-12 col-md-6 col-lg-4" id="container_card" key=${i}>
+    content.innerHTML = ``;
+    data.results.forEach(
+      (el, i) =>
+        (content.innerHTML += `<section class="col-12 col-md-6 col-lg-4" id="container_card" key=${i}>
     <section class="card  ">
       <section class="ratio ratio-1x1 object-fit-scale ">
         <img
@@ -50,19 +48,17 @@ const getMovie = async () => {
       >
         <section class="d-flex justify-content-between ">
           <p class="card-title w-75 ">${el.original_title}</p>
-          <p class="card-title fw-bold">${el.vote_average}</p>
+          <p class="card-title fw-bold">${el.vote_average.toFixed(1)}</p>
         </section>
         <p class="card-text">${
           el.release_date
-            ? `${dayjs(el.release_date).format("MMM DD| YYYY")}`
+            ? `${dayjs(el.release_date).format("MMM DD, YYYY")}`
             : "unknown"
         }</p>
       </section>
     </section>
-  </section>`
-      )
-      .join("");
-    content.innerHTML = result.replace(/\|/gi, ",");
+  </section>`)
+    );
   } catch (error) {
     console.log(error);
   }
